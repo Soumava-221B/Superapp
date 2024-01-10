@@ -73,7 +73,7 @@ export default function Register() {
         <div className={styles.bottom}>
           <p>Discover new things on SuperApp</p>
         </div>
-        <img src={coverImage} alt='cover image of music'/>
+        <img src={coverImage} alt="cover image of music" />
       </div>
       <div className={styles.body}>
         <p className={styles.super}>Super App</p>
