@@ -36,27 +36,27 @@ export default function Register() {
 
     if(!formData.name.trim().length) {
       isValid = false;
-      setErrors({ ...errors, name: "Name field required" });
+      setErrors({ ...errors, name: "Field is required" });
     }
 
     if (!formData.email.trim().length) {
       isValid = false;
-      setErrors({ ...errors, email: "Email filed required"});
+      setErrors({ ...errors, email: "Field is required"});
     }
 
-    if (!formData.password.trim().length) {
-      isValid = false;
-      setErrors({ ...errors, password: "Password filed required"});
-    }
+    // if (!formData.password.trim().length) {
+    //   isValid = false;
+    //   setErrors({ ...errors, password: "Field is required"});
+    // }
 
     if (!formData.userName.trim().length) {
       isValid = false;
-      setErrors({ ...errors, userName: "Username filed required"});
+      setErrors({ ...errors, userName: "Field is required"});
     }
 
     if (!formData.isAgreed.trim().length) {
       isValid = false;
-      setErrors({ ...errors, isAgreed: "Agreement field is required"});
+      setErrors({ ...errors, isAgreed: "Check this box if you want to proceed"});
     }
 
     // you can always change the error message for each field based on addition checks

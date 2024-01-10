@@ -43,6 +43,7 @@ img {
 }
 
 .body {
+    padding: 200px;
     background: #1e1e1e;
     color: white;
     text-align: center;
