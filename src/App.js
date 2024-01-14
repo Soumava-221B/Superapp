@@ -6,7 +6,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/register"element={<RegisterPage />}/>
-        <Route path="/genre"element={<GenrePage />}/>
+        {/* <Route path="/genre"element={<GenrePage />}/> */}
       </Routes>
     </BrowserRouter>
   );
