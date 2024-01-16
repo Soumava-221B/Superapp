@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
 import styles from "./Register.module.css";
@@ -15,13 +15,7 @@ export default function Register() {
     isAgreed: false,
   });
 
-  const [errors, setErrors] = useState({
-    name: "",
-    email: "",
-    mobile: "",
-    userName: "",
-    isAgreed: "", 
-  });
+  const [errors, setErrors] = useState({});
 
   const handelChange = (event) => {
     setFormData({
@@ -31,49 +25,52 @@ export default function Register() {
   };
 
   const handleSubmit = (event) => {
-    let isValid = true;
     event.preventDefault();
+    const errors = {}
 
-    if(!formData.name.trim().length) {
-      isValid = false;
-      setErrors({ ...errors, name: "Field is required" });
-    }
+    if (!formData.name.trim().length) {
+      errors.name = "name is required";
+  }
 
-    if (!formData.email.trim().length) {
-      isValid = false;
-      setErrors({ ...errors, email: "Field is required"});
-    }
+  if (!formData.email.trim().length) {
+      errors.email = "email required";
+  }
 
-    // if (!formData.password.trim().length) {
+  if (!formData.email.trim().length) {
+    errors.userName = "username required";
+}
+
+if (!formData.email.trim().length) {
+  errors.mobile = "mobile no. required";
+}
+
+setErrors(errors);
+
+    // if (!formData.isAgreed.trim().length) {
     //   isValid = false;
-    //   setErrors({ ...errors, password: "Field is required"});
+    //   setErrors({ ...errors, isAgreed: "Check this box if you want to proceed"});
     // }
-
-    if (!formData.userName.trim().length) {
-      isValid = false;
-      setErrors({ ...errors, userName: "Field is required"});
-    }
-
-    if (!formData.isAgreed.trim().length) {
-      isValid = false;
-      setErrors({ ...errors, isAgreed: "Check this box if you want to proceed"});
-    }
 
     // you can always change the error message for each field based on addition checks
 
-    if (isValid) {
-        localStorage.setItem("userData", formData);
-        navigate("/genre");
-    }
+    // if (Object.keys(errors).length) {
+    //   localStorage.setItem("userData", JSON.stringify(formData));
+    //   navigate("/genre");
+    // }
   };
+
+  // For debuging purpose
+  useEffect(() => {
+    console.log(errors);
+  }, [errors]);
 
   return (
     <div className={styles.container}>
       <div>
+      <img src={coverImage} alt="cover image of music" />
         <div className={styles.bottom}>
           <p>Discover new things <br/> on SuperApp</p>
         </div>
-        <img src={coverImage} alt="cover image of music" />
       </div>
       <div className={styles.body}>
         <p className={styles.super}>Super App</p>
@@ -97,7 +94,7 @@ export default function Register() {
 
             <input 
               type='text'
-              name='username'
+              name='userName'
               placeholder='Eneter your username'
               onChange={(event => handelChange(event))}>
               </input>
@@ -143,7 +140,7 @@ export default function Register() {
                 })
                 }
                 type='checkbox'
-                name='check' 
+                name='isAgreed' 
                 />
                 Share my registration data with Superapp
             </label>
