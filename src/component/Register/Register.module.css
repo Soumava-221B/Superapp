@@ -1,4 +1,4 @@
-.container {
+.content {
     display: flex;
 }
 
@@ -8,57 +8,35 @@ img {
     height: 110vh;
 }
 
-.top {
-    position: absolute;
-    display: flex;
-    top: 4vh;
-    left: 2vw;
-    gap: 40px;
-    color: white;
-    align-items: center;
-}
-
-.top p {
-    font-size: larger;
-    font-weight: 600;
-}
-
-.top button {
-    padding: 12px 32px;
-    background: #72DB73;
-    border-radius: 33px;
-    color: white;
-    box-shadow: none;
-    border: none;
-}
-
 .bottom {
     position: absolute;
-    bottom: 3vh;
-    left: 2vw;
     color: white;
-    font-size: 55px;
+    font-style: normal;
     font-weight: 900;
-    max-width: 550vw;
+    font-size: 55px;
+    width: 695px;
+    height: 143px;
+    left: 62px;
+    top: 853px;
 }
 
 .body {
-    /* padding: 200px; */
-    background: #1e1e1e;
-    color: white;
-    text-align: center;
     display: flex;
-    flex-direction: column;
+    background: black;
+    color: white;
+    width: 58vw;
+    text-align: center;
     justify-content: center;
+    flex-direction: column;
 }
 
-.body .super {
-    color: #72db73;
-    font-size: 3rem;
-    margin-bottom: 15px;
+.body .heading {
+    color: #72DB73;
+    font-weight: 400;
+    font-size: 67px;
 }
 
-.super {
+.heading {
     font-family: "Single Day", cursive;
 }
 
@@ -76,7 +54,7 @@ form input {
 }
 
 form input:focus {
-    border-color: #72db73;
+    border-color: #72DB73;
 }
 
 form .error {
@@ -113,7 +91,7 @@ form button {
     border-radius: 24px;
     padding: 10px 12px;
     color: white;
-    background-color: #72DB73;
+    background-color: #72db73;
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
@@ -135,12 +113,6 @@ form button:hover {
 }
 
 .footer span {
-    color: #72DB73;
+    color: #72db73;
     cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    .body {
-        padding: 2vw;
-    }
 }
