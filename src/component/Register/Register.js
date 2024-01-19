@@ -51,10 +51,10 @@ export default function Register() {
 
     setErrors(errors);                                             // call the errors message
     
-    // if (Object.keys(errors).length) {                               
-    //   localStorage.setItem("userData", JSON.stringify(formData));
-    //   navigate("/genre");                                            // takes you to genre page
-    // }
+    if (Object.keys(errors).length) {                               
+      localStorage.setItem("userData", JSON.stringify(formData));
+      navigate("/genre");                                            // takes you to genre page
+    }
     };
     useEffect(() => {                  // For Debuging purpose
       console.log(errors);

@@ -10,6 +10,7 @@ import music from "../../assets/images/music.png";
 import romance from "../../assets/images/romance.png";
 import thriller from "../../assets/images/thriller.png";
 import western from "../../assets/images/western.png";
+import BlockCard from "../BlockCard/BlockCard";
 
 import styles from "./MovieGenre.module.css";
 
@@ -17,47 +18,74 @@ const DEFAULT_GENRES = [
     {
         id: "Action",
         color: "#FF5209",
-        image: (<img style={{width: "160px", height: "120px" }} src={action}/>),
+        image: (<img style={{width: "160px", height: "120px" }} 
+            src={action}
+            alt=""
+            />),
     },
     {
         id: "Drama",
         color: "#D7A4FF",
-        image: (<img style={{width: "160px", height: "120px" }} src={drama}/>),
+        image: (<img style={{width: "160px", height: "120px" }} 
+            src={drama}
+            alt=""
+            />),
     },
     {
         id: "Fantasy",
         color: "#FF4ADE",
-        image: (<img style={{width: "160px", height: "120px" }} src={fantasy}/>),
+        image: (<img style={{width: "160px", height: "120px" }} 
+            src={fantasy}
+            alt=""
+        />),
     },
     {
         id: "Fiction",
         color: "#6CD061",
-        image: (<img style={{width: "160px", height: "120px" }} src={fiction}/>),
+        image: (<img style={{width: "160px", height: "120px" }} 
+            src={fiction}
+            alt=""
+        />),
     },
     {
         id: "Horror",
         color: "#7358FF",
-        image: (<img style={{width: "160px", height: "120px" }} src={horror}/>),
+        image: (<img style={{width: "160px", height: "120px" }} 
+            src={horror}
+            alt=""
+        />),
     },
     {
         id: "Music",
         color: "#E61E32",
-        image: (<img style={{width: "160px", height: "120px" }} src={music}/>),
+        image: (<img style={{width: "160px", height: "120px" }} 
+            src={music}
+            alt=""
+        />),
     },
     {
         id: "Romance",
         color: "#11B800",
-        image: (<img style={{width: "160px", height: "120px" }} src={romance}/>),
+        image: (<img style={{width: "160px", height: "120px" }} 
+            src={romance}
+            alt=""
+            />),
     },
     {
         id: "Thriller",
         color: "#84C2FF",
-        image: (<img style={{width: "160px", height: "120px" }} src={thriller}/>),
+        image: (<img style={{width: "160px", height: "120px" }} 
+            src={thriller}
+            alt=""
+            />),
     },
     {
         id: "Western",
         color: "#912500",
-        image: (<img style={{width: "160px", height: "120px" }} src={western}/>),
+        image: (<img style={{width: "160px", height: "120px" }} 
+            src={western}
+            alt=""
+        />),
     },
     
 ];
@@ -76,12 +104,15 @@ const Category = () => {
     };
 
     const handleSubmit = () => {
-        if (!categories.length) {
+        if (categories.length < 3) {
             setLengthError(true);
             return;
+        } else {
+            setLengthError(false);
+            localStorage.setItem("genre", categories);
+            navigate("/");
         }
-        localStorage.setItem("genre", categories);
-        navigate("/");
+        
     };
 
     return (
